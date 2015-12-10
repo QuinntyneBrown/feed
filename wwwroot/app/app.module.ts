@@ -1,8 +1,8 @@
 ﻿angular.module("app", ["ngX"])
-    .config(["$routeProvider", ($routeProvider) => {
+.config(["$routeProvider", ($routeProvider) => {
 
-        $routeProvider.when("/", {
-            "componentName": "feedList"
-        });
+    $routeProvider.when("/", {
+        "componentName": "feedList"
+    });
 
-    }]);
+}]);

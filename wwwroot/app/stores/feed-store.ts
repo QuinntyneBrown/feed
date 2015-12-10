@@ -1,8 +1,8 @@
 ﻿class FeedStore {
 
-    constructor(private store) {
+    constructor(private dispatcher, private store) {
 
     }
 }
 
-angular.module("app").service("feedStore", ["store",FeedStore]); 
+angular.module("app").service("feedStore", ["dispatcher","store",FeedStore]); 
