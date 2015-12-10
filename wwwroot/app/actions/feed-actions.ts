@@ -1,8 +1,12 @@
 ﻿class FeedActions {
 
-    constructor(dispatcher) {
+    constructor(dispatcher, private feedService: FeedService) {
+        
+    }
+
+    get() {
 
     }
 }
 
-angular.module("app").service("feedActions", ["dispatcher",FeedActions]); 
+angular.module("app").service("feedActions", ["dispatcher","feedService",FeedActions]); 

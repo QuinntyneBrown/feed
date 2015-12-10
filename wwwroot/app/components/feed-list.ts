@@ -1,5 +1,5 @@
 ﻿class FeedList {
-    constructor(feedStore) {
+    constructor($routeParams, dispatcher, feedActions, feedStore) {
 
     }
 
@@ -10,6 +10,6 @@
 
 ngX.Component({
     component: FeedList,
-    providers:["dispatcher"],
+    providers: ["$routeParams","dispatcher","feedActions","feedStore"],
     template: [""].join(" ")
 }); 
