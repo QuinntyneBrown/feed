@@ -24,6 +24,7 @@
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
     <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
     <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,10 +74,21 @@
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\app.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\feed-list.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\feed-service.ts" />
     <TypeScriptCompile Include="wwwroot\app\stores\feed-store.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="node_modules\ng-x\src\ngX\" />
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

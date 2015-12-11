@@ -2,7 +2,11 @@
 .config(["$routeProvider", ($routeProvider) => {
 
     $routeProvider.when("/", {
-        "componentName": "feedList"
+        "componentName": "feedListComponent"
+    });
+
+    $routeProvider.when("/:username", {
+        "componentName": "feedListComponent"
     });
 
 }]);

@@ -2,7 +2,7 @@
     constructor(private fetch) { }
 
     get(options) {
-        return this.fetch.fromServiceOrCache({ url: "", method: "GET" }).then( results => {
+        return this.fetch.fromService({ url: "https://api.github.com/users/" + options.username + "/repos", method: "GET" }).then( results => {
             return results.data;
         });
     }

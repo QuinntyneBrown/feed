@@ -1,10 +1,15 @@
-﻿class App {
+﻿class AppComponent {
     constructor() {
 
     }
 }
 
 ngX.Component({
-    component: App,
-    template: [""].join(" ")
+    selector: "app",
+    component: AppComponent,
+    template: [
+        "<div class='app'>",
+        "   <div class='mainContent' data-ng-view>",
+        "</div>"
+    ].join(" ")
 }); 
