@@ -1,7 +1,5 @@
 ﻿class AppComponent {
-    constructor() {
-
-    }
+    constructor() { }
 }
 
 ngX.Component({
