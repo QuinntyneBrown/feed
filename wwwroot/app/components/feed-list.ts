@@ -5,10 +5,8 @@
 
     get feedItems() {
         return this.feedStore.items.filter(item => {
-            if (this.$routeParams.username) {
-                return item.owner.login.toLowerCase() === this.$routeParams.username;
-            }
-            return item.owner.login.toLowerCase() === "quinntynebrown";
+            this.$routeParams.username = this.$routeParams.username || "quinntynebrown";            
+            return item.owner.login.toLowerCase() === this.$routeParams.username.toLowerCase();
         });
     }
     
@@ -17,7 +15,7 @@
     static canActivate = () => {        
         return ["$q", "$route", "dispatcher", "feedActions", ($q, $route, dispatcher, feedActions) => {
             var deferred = $q.defer();            
-            var actionId = feedActions.get({ username: $route.current.params.username || "quinntynebrown" });
+            var actionId = feedActions.get($route.current.params.username);
             var listenerId = dispatcher.addListener({
                 actionType: "CHANGE",
                 callback: options => {

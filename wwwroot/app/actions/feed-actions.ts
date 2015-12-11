@@ -2,9 +2,9 @@
 
     constructor(private dispatcher, private feedService, private guid) { }
 
-    get(options) {
+    get(username = "quinntynebrown") {
         var guid = this.guid();
-        this.feedService.get({ username: options.username }).then(results => {
+        this.feedService.get({ username: username }).then(results => {
             this.dispatcher.emit({
                 actionType: "FEED_FETCHED",
                 options: {
